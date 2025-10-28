@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d8^&g6+9j6v&2k+ad*9_7k501pu%$rxr6z0shw8dms5d3-w$6u
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = False
-ALLOWED_HOSTS = ['embracingthegirlchild.org.ng', 'www.embracingthegirlchild.org.ng']
+ALLOWED_HOSTS = ['embracingthegirlchild.org.ng', 'www.embracingthegirlchild.org.ng','https://embracingthegirlchild.onrender.com']
 
 
 # Application definition
