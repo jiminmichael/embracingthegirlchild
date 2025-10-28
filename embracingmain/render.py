@@ -8,7 +8,7 @@ DEBUG = False
 
 # Add Render URL to ALLOWED_HOSTS
 ALLOWED_HOSTS.extend(
-    ['embracingthegirlchild.onrender.com', '.onrender.com', 'localhost', '127.0.0.1']
+    ['embracingthegirlchild.onrender.com', '.onrender.com', 'localhost', '127.0.0.1', 'www.embracingthegirlchild.org.ng','https://embracingthegirlchild.onrender.com',]
 )
 
 # Configure database using DATABASE_URL environment variable
@@ -36,3 +36,4 @@ SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
+

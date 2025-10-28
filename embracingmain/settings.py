@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-d8^&g6+9j6v&2k+ad*9_7k501pu%$rxr6z0shw8dms5d3-w$6u
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = False
-ALLOWED_HOSTS = ['embracingthegirlchild.org.ng', 'www.embracingthegirlchild.org.ng']
+ALLOWED_HOSTS = ['embracingthegirlchild.org.ng',
+                'www.embracingthegirlchild.org.ng',
+                'https://embracingthegirlchild.onrender.com',
+                'embracingthegirlchild.onrender.com']
 
 
 # Application definition
@@ -42,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -116,16 +120,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+# STATIC_URL = '/static/'
+# STATIC_ROOT = BASE_DIR / 'static'
+
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'staticfiles',
+# ]
+
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
-
 STATICFILES_DIRS = [
     BASE_DIR / 'staticfiles',
 ]
 
+
 # Media files (User uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
