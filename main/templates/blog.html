@@ -76,7 +76,7 @@
                 {% for item in posts %}
                     <article class="blog-post" data-aos="fade-up">
                         <div class="blog-image">
-                            <img src="{{item.image.url}}" alt="Blog Post">
+                            <img src={% static "media/{{item.image.url}}" %} alt="Blog Post">
                             <span class="blog-category">{{item.category}}</span>
                         </div>
                         <div class="blog-content">

@@ -114,7 +114,7 @@
                         <div class="swiper-slide" data-aos="zoom-in" data-aos-delay="100">
                             <div class="blog-card">
                                 <div class="blog-image">
-                                    <img src="{{item.image.url}}" alt="Blog Post">
+                                    <img src={% static "media/{{item.image.url}}" %}  alt="Blog Post">
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-meta">
