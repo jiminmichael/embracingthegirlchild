@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>{{item.title}}</title>
+    <meta name="keywords" content="{{item.title}}, {{item.content|truncatechars:50}}">
+    
+    <!-- Author info -->
+    <meta name="author" content="Embracing The Girl Child Initiative">
+    
+    <meta http-equiv="Content-Language" content="en">
+    
+    <meta property="og:title" content="{{item.title}}">
+    <meta property="og:description" content="{{item.content|truncatechars:30}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.embracingthegirlchild.org.ng/">
+    <meta property="og:image" content="https://www.embracingthegirlchild.org.ng/logo.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Embracing The Girl Child Initiative || Home Page">
+    <meta name="twitter:description" content="{{item.content | truncatechars:30}}">
+    <meta name="twitter:image" content="https://www.embracingthegirlchild.org.ng/logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/single-blog.css" %}">
+    
+  
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static "images/logo-main.png" %}" alt="Embracing the Girl Child Initiative Logo">
+            {% comment %} <div class="logo-text">Embracing the <span>Girl Child</span></div> {% endcomment %}
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            {% comment %} <a href="#campaigns">Campaigns</a> {% endcomment %}
+            <a href="{% url 'blog' %}" class="active">Blog</a>
+            <a href="{% url 'gallery' %}">Gallery</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="blog-header">
+        <div class="container">
+            <div class="blog-meta-top">
+                <span class="blog-category">{{post.category}}</span>
+                <span class="blog-reading-time">
+                    <i class="fas fa-clock"></i> 8 min read
+                </span>
+            </div>
+            <h1 class="blog-title">{{post.title}}</h1>
+            
+            <div class="blog-author-info">
+                <div class="author-avatar">
+                    <img src="https://picsum.photos/seed/author1/100/100.jpg" alt="Author">
+                </div>
+                <div class="author-details">
+                    <div class="author-name">{{post.author}}</div>
+                    <div class="author-bio">Education Specialist & Girls' Rights Advocate</div>
+                </div>
+                <div class="blog-date">
+                    <i class="fas fa-calendar"></i>{{post.created_at}}
+                </div>
+            </div>
+        </div>
+    
+    </header>
+
+    <!-- Featured Image -->
+    <div class="blog-featured-image">
+        <img src="{{post.image.url}}" alt="{{post.title}}">
+        <div class="image-caption">
+            Girls participating in a menstrual hygiene education session at Government Science Secondary School
+        </div>
+    </div>
+
+    <!-- Blog Content -->
+    <main class="blog-content">
+        <article class="blog-post-content">
+            <p data-aos="fade-up">{{post.content |linebreaks}}</p>
+
+            {% comment %} <h2 data-aos="fade-up">The Current Situation</h2>
+            <p data-aos="fade-up">In many parts of Nigeria, menstruation remains a taboo topic. Girls often receive little to no education about their menstrual cycles until they experience their first period, leading to confusion, fear, and embarrassment. This lack of knowledge has severe consequences:</p>
+            
+            <ul data-aos="fade-up">
+                <li>Many girls miss up to 20% of school days each year due to menstruation</li>
+                <li>Lack of access to affordable sanitary products forces girls to use unhygienic alternatives</li>
+                <li>Cultural myths and misconceptions lead to social isolation</li>
+                <li>Poor menstrual health can lead to infections and reproductive health issues</li>
+            </ul>
+
+            <div class="highlight-box" data-aos="fade-up">
+                <h3>Did You Know?</h3>
+                <p>According to UNICEF, 1 in 10 girls in Africa miss school during their periods. In Nigeria, this number is even higher in rural areas where access to sanitary products and education is limited.</p>
+            </div>
+
+            <h2 data-aos="fade-up">Why Education Matters</h2>
+            <p data-aos="fade-up">Proper menstrual hygiene education does more than just teach girls about their bodies—it empowers them to take control of their health and education. When girls understand what's happening to their bodies, they're more likely to:</p>
+
+            <ol data-aos="fade-up">
+                <li><strong>Stay in School:</strong> Education removes the stigma and fear associated with menstruation, allowing girls to attend school regularly throughout their cycles.</li>
+                <li><strong>Maintain Proper Hygiene:</strong> Knowledge about proper hygiene practices prevents infections and promotes overall health.</li>
+                <li><strong>Build Confidence:</strong> Understanding their bodies helps girls develop self-confidence and positive body image.</li>
+                <li><strong>Become Advocates:</strong> Educated girls can help break the cycle of silence and educate others in their communities.</li>
+            </ol>
+
+            <blockquote data-aos="fade-up">
+                <p>"Education is the most powerful weapon which you can use to change the world. When we educate girls about their bodies and rights, we're not just changing individual lives—we're transforming entire communities."</p>
+            </blockquote>
+
+            <h2 data-aos="fade-up">Our Approach</h2>
+            <p data-aos="fade-up">Through our school visits and community outreach programs, we take a comprehensive approach to menstrual hygiene education:</p>
+
+            <div class="stats-section" data-aos="fade-up">
+                <div class="stat-item">
+                    <div class="stat-number">15,000+</div>
+                    <div class="stat-label">Girls Educated</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Schools Reached</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100,000+</div>
+                    <div class="stat-label">Sanitary Products Distributed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Attendance Improvement</div>
+                </div>
+            </div>
+
+            <h3 data-aos="fade-up">Interactive Sessions</h3>
+            <p data-aos="fade-up">We conduct interactive sessions where girls can ask questions freely in a safe environment. Our sessions cover:</p>
+            <ul data-aos="fade-up">
+                <li>The biological process of menstruation</li>
+                <li>Proper hygiene practices</li>
+                <li>Nutrition during menstruation</li>
+                <li>How to track menstrual cycles</li>
+                <li>When to seek medical help</li>
+            </ul>
+
+            <h3 data-aos="fade-up">Product Distribution</h3>
+            <p data-aos="fade-up">Education alone isn't enough if girls can't afford sanitary products. We distribute free sanitary towels in schools and teach girls how to use them properly. This ensures that financial constraints don't prevent girls from managing their periods with dignity.</p>
+
+            <h3 data-aos="fade-up">Engaging Boys and Men</h3>
+            <p data-aos="fade-up">We believe menstrual hygiene is everyone's responsibility. We conduct separate sessions for boys to help them understand menstruation and become supportive allies. We also engage parents and community leaders to break down cultural barriers.</p>
+
+            <h2 data-aos="fade-up">Success Stories</h2>
+            <p data-aos="fade-up">The impact of our menstrual hygiene education program has been remarkable. Here are a few stories that highlight the difference we're making:</p>
+
+            <p data-aos="fade-up"><strong>Fatima's Story:</strong> Fatima, a 14-year-old student in Nasarawa, used to miss school for three days every month during her period. After attending our education session and receiving sanitary products, she now attends school regularly and has even become a peer educator, helping other girls in her class.</p>
+
+            <p data-aos="fade-up"><strong>Community Change:</strong> In one community where we conducted our program, the school principal reported a 40% reduction in absenteeism among female students within six months. The community also started a small fund to ensure continuous supply of sanitary products for needy students.</p>
+
+            <h2 data-aos="fade-up">Looking Forward</h2>
+            <p data-aos="fade-up">While we've made significant progress, there's still much work to be done. Our goals for the coming year include:</p>
+            <ul data-aos="fade-up">
+                <li>Expanding our program to reach 100 more schools</li>
+                <li>Developing a comprehensive menstrual health curriculum</li>
+                <li>Training local women as menstrual health educators</li>
+                <li>Advocating for government policies to support menstrual health in schools</li>
+                <li>Establishing sustainable sanitary product distribution systems</li>
+            </ul>
+
+            <p data-aos="fade-up">Menstrual hygiene education is not just about health—it's about ensuring that every girl has the opportunity to pursue her education and dreams without interruption. When we invest in menstrual health education, we're investing in the future of our girls and our nation.</p>
+
+            <p data-aos="fade-up">Join us in this mission. Whether through volunteering, donations, or simply spreading awareness, your support can help us reach more girls and create lasting change.</p> {% endcomment %}
+        </article>
+
+        <!-- Tags and Share -->
+        <div class="blog-footer">
+            <div class="blog-tags">
+                <h3>Tags</h3>
+                <div class="tag-list">
+                    <a href="#" class="tag">Menstrual Health</a>
+                    <a href="#" class="tag">Education</a>
+                    <a href="#" class="tag">Girls' Rights</a>
+                    <a href="#" class="tag">School Programs</a>
+                    <a href="#" class="tag">Health & Hygiene</a>
+                </div>
+            </div>
+            
+            <div class="share-section">
+                <h3>Share this post</h3>
+                
+                <div class="share-buttons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"
+                    target="_blank" class="share-btn share-facebook" title="Share on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ post.title }}" 
+                        target="_blank" class="share-btn share-twitter" title="Share on Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.build_absolute_uri }}" 
+                        target="_blank" class="share-btn share-linkedin" title="Share on LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://wa.me/?text={{ post.title }}%20{{ request.build_absolute_uri }}" 
+                        target="_blank" title="Share on WhatsApp" class="share-btn share-whatsapp" title="Share on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="share-btn share-email" title="Share via Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Blog -->
+        <a href="{% url 'blog' %}" class="back-to-blog">
+            <i class="fas fa-arrow-left"></i>
+            Back to Blog
+        </a>
+
+        <!-- Author Bio Section -->
+        <div class="author-bio-section" data-aos="fade-up">
+            <div class="author-bio-avatar">
+                <img src="https://picsum.photos/seed/author1/200/200.jpg" alt="Dr. Amina Bello">
+            </div>
+            <div class="author-bio-content">
+                <h3>About Amaka Onyema</h3>
+                <p>Nneamaka Onyema FICMC is a Legal Practitioner and the Founder of Embracing the Girl Child Initiative. 
+                        <br>
+                        
+                        
+                        The Now You Know Series is a weekly series where facts on various Laws, Policies and weird Law facts are posted on her various social media handles, questions from the audience are tackled and discussions on related issues are made.
+                        <br>
+                        
+                        She has various publications to her name on various law topics bringing awareness to the members of the public.
+                        <br>
+                        
+                       
+                    </p>
+                        <br>
+                <div class="author-social">
+                    <a href="https://www.linkedin.com/in/amaka-onyema-ficmc-36590172?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href=""><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Posts -->
+        <section class="related-posts" data-aos="fade-up">
+            <h2>Related Posts</h2>
+            <div class="related-posts-grid">
+                <article class="related-post-card">
+                    <div class="related-post-image">
+                        <img src="https://picsum.photos/seed/related1/400/300.jpg" alt="Related Post">
+                    </div>
+                    <div class="related-post-content">
+                        <h3 class="related-post-title">Legal Rights Every Girl Should Know in Nigeria</h3>
+                        <p class="related-post-meta">May 28, 2023 • 6 min read</p>
+                    </div>
+                </article>
+                
+                <article class="related-post-card">
+                    <div class="related-post-image">
+                        <img src="https://picsum.photos/seed/related2/400/300.jpg" alt="Related Post">
+                    </div>
+                    <div class="related-post-content">
+                        <h3 class="related-post-title">Breaking the Cycle: A Survivor's Journey to Justice</h3>
+                        <p class="related-post-meta">May 10, 2023 • 10 min read</p>
+                    </div>
+                </article>
+                
+                <article class="related-post-card">
+                    <div class="related-post-image">
+                        <img src="https://picsum.photos/seed/related3/400/300.jpg" alt="Related Post">
+                    </div>
+                    <div class="related-post-content">
+                        <h3 class="related-post-title">Career Guidance: Empowering Girls to Dream Big</h3>
+                        <p class="related-post-meta">April 22, 2023 • 7 min read</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Comments Section -->
+        <section class="comments-section" data-aos="fade-up">
+            <h2>Comments (3)</h2>
+            
+            <!-- Comment Form -->
+            <div class="comment-form">
+                <h3>Leave a Comment</h3>
+                <form id="comment-form">
+                    <div class="form-group">
+                        <label for="comment-name">Name</label>
+                        <input type="text" id="comment-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-email">Email</label>
+                        <input type="email" id="comment-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-message">Comment</label>
+                        <textarea id="comment-message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Post Comment</button>
+                </form>
+            </div>
+            
+            <!-- Comments List -->
+            <div class="comment-list">
+                <div class="comment">
+                    <div class="comment-avatar">
+                        <img src="https://picsum.photos/seed/user1/100/100.jpg" alt="User">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">Sarah Johnson</span>
+                            <span class="comment-date">2 days ago</span>
+                        </div>
+                        <p class="comment-text">This is such an important initiative! I've seen firsthand how lack of menstrual hygiene education affects girls' education. Keep up the amazing work!</p>
+                    </div>
+                </div>
+                
+                <div class="comment">
+                    <div class="comment-avatar">
+                        <img src="https://picsum.photos/seed/user2/100/100.jpg" alt="User">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">Amina Yusuf</span>
+                            <span class="comment-date">1 week ago</span>
+                        </div>
+                        <p class="comment-text">Thank you for sharing this. As a teacher, I've seen the difference this education makes. More schools need to implement these programs.</p>
+                        <div class="comment-reply">
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <img src="https://picsum.photos/seed/author1/100/100.jpg" alt="Author">
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="comment-author">Dr. Amina Bello</span>
+                                        <span class="comment-date">6 days ago</span>
+                                    </div>
+                                    <p class="comment-text">Thank you for your feedback, Amina! We'd love to partner with your school. Please reach out to us through our contact page.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comment">
+                    <div class="comment-avatar">
+                        <img src="https://picsum.photos/seed/user3/100/100.jpg" alt="User">
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <span class="comment-author">Michael Okonkwo</span>
+                            <span class="comment-date">2 weeks ago</span>
+                        </div>
+                        <p class="comment-text">Great article! I'm particularly impressed by the approach of including boys in the education. This is crucial for breaking the stigma.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="100">
+                    <h3>About Us</h3>
+                    <p>Embracing the Girl Child Initiative is a program by LinkedLegal Attorneys aimed at providing legal representation, counseling, and rehabilitation to victims of sexual abuse and domestic violence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#campaigns">Campaigns</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Programs</h3>
+                    <ul>
+                        <li><a href="#">Legal Representation</a></li>
+                        <li><a href="#">Domestic Violence Support</a></li>
+                        <li><a href="#">Sanitary Towels Distribution</a></li>
+                        <li><a href="#">Public Sensitization</a></li>
+                        <li><a href="#">School Visits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 4 OBINNA ETELE STREET HILLSIDE ESTATE DAWAKI ABUJA</p>
+                    <p><i class="fas fa-phone"></i> +234 8039625141</p>
+                    <p><i class="fas fa-envelope"></i> linkedlegalattorneys@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Embracing the Girl Child Initiative. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Navbar Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close navbar when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Comment Form Submission
+        document.getElementById('comment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('comment-name').value;
+            const email = document.getElementById('comment-email').value;
+            const message = document.getElementById('comment-message').value;
+            
+            // Create new comment element
+            const newComment = document.createElement('div');
+            newComment.className = 'comment';
+            newComment.innerHTML = `
+                <div class="comment-avatar">
+                    <img src="https://picsum.photos/seed/${Date.now()}/100/100.jpg" alt="User">
+                </div>
+                <div class="comment-content">
+                    <div class="comment-header">
+                        <span class="comment-author">${name}</span>
+                        <span class="comment-date">Just now</span>
+                    </div>
+                    <p class="comment-text">${message}</p>
+                </div>
+            `;
+            
+            // Add comment to the list
+            const commentList = document.querySelector('.comment-list');
+            commentList.insertBefore(newComment, commentList.firstChild);
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            alert('Thank you for your comment! It will be visible after moderation.');
+        });
+
+        // Share functionality
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const url = window.location.href;
+                const title = document.querySelector('.blog-title').textContent;
+                
+                if (this.classList.contains('share-facebook')) {
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+                } else if (this.classList.contains('share-twitter')) {
+                    window.open(`https://twitter.com/intent/tweet?text=${title}&url=${url}`, '_blank');
+                } else if (this.classList.contains('share-linkedin')) {
+                    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+                } else if (this.classList.contains('share-whatsapp')) {
+                    window.open(`https://wa.me/?text=${title} ${url}`, '_blank');
+                } else if (this.classList.contains('share-email')) {
+                    window.location.href = `mailto:?subject=${title}&body=${url}`;
+                }
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Reading progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            // You can add a progress bar at the top if needed
+            console.log(`Reading progress: ${scrolled}%`);
+        });
+    </script>
+</body>
+</html>

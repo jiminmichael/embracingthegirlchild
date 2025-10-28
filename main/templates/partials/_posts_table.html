@@ -1,0 +1,20 @@
+{% for post in posts %}
+    {% include 'partials/_post_row.html' with post=post %}
+{% empty %}
+<tr><td colspan="7">No posts found.</td></tr>
+{% endfor %}
+
+<!-- pagination controls -->
+<tr>
+    <td colspan="7">
+        <div class="pagination-controls">
+            {% if posts.has_previous %}
+                <button class="btn btn-secondary page-btn" data-page="{{ posts.previous_page_number }}">Previous</button>
+            {% endif %}
+            <span>Page {{ posts.number }} of {{ posts.paginator.num_pages }}</span>
+            {% if posts.has_next %}
+                <button class="btn btn-secondary page-btn" data-page="{{ posts.next_page_number }}">Next</button>
+            {% endif %}
+        </div>
+    </td>
+</tr>

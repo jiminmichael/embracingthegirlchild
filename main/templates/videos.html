@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos - Embracing the Girl Child Initiative</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/videos.css" %}">
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+           <img src="{% static "images/logo-main.png" %}" alt="Embracing the Girl Child Initiative Logo">
+            {% comment %} <div class="logo-text">Embracing the <span>Girl Child</span></div> {% endcomment %}
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            {% comment %} <a href="#campaigns">Campaigns</a> {% endcomment %}
+            <a href="{% url 'blog' %}">Blog</a>
+            <a href="{% url 'gallery' %}">Gallery</a>
+            <a href="{% url 'videos' %}">Videos</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Our Videos</h1>
+            <p>Watch our journey of empowering girls across Nigeria through these impactful videos</p>
+        </div>
+        <div class="breadcrumb">
+            <a href="{% url 'home' %}">Home</a>
+            <span>/</span>
+            <span>Videos</span>
+        </div>
+    </section>
+
+    <!-- Video Stats Section -->
+    <section class="video-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="fade-up">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Videos Created</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number">100K+</div>
+                    <div class="stat-label">Total Views</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number">25</div>
+                    <div class="stat-label">Schools Documented</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Success Stories</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="videos-section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Video Gallery</h2>
+                <p>Explore our collection of videos showcasing our programs, events, and success stories</p>
+            </div>
+
+            <!-- Video Filters -->
+            <div class="video-filters" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all">All Videos</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="school-visits">School Visits</button>
+                <button class="filter-btn" data-filter="awareness">Awareness</button>
+                <button class="filter-btn" data-filter="testimonials">Testimonials</button>
+            </div>
+
+            <!-- Featured Video -->
+            <div class="featured-video" data-aos="fade-up" data-aos-delay="200">
+                <div class="featured-video-container">
+                    <iframe src="https://www.youtube.com/embed/4FK7Cy9MeeI?si=_73r8rSnMuk2JBb-" title="Featured Video" allowfullscreen></iframe>
+                    
+                </div>
+                <div class="featured-info">
+                    <h3>Empowering Girls Through Education - Our Journey</h3>
+                    <p>Join us as we take you through our remarkable journey of empowering girls across Nigeria. This documentary showcases our various programs, the challenges we've overcome, and the lives we've transformed through education, legal support, and community engagement.</p>
+                    <div class="featured-meta">
+                        <span><i class="fas fa-eye"></i> 15.2K views</span>
+                        <span><i class="fas fa-calendar"></i> 2 months ago</span>
+                        <span><i class="fas fa-clock"></i> 12:45</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Videos Grid -->
+            <div class="videos-grid">
+                <!-- Video 1 -->
+                <div class="video-card" data-category="school-visits" data-aos="fade-up" data-aos-delay="100">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/wYRdd_jyFiY?si=23amMAAPDWHuXyve" title="School Visit Video" allowfullscreen></iframe>
+                        
+                        <div class="play-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">School Visit</span>
+                        <h3 class="video-title">Menstrual Hygiene Education at Government Science Secondary School</h3>
+                        <p class="video-description">Watch our team conduct an engaging menstrual hygiene education session at Government Science Secondary School, Nasarawa.</p>
+                        <div class="video-meta">
+                            <span class="video-views"><i class="fas fa-eye"></i> 5.2K</span>
+                            <span class="video-date"><i class="fas fa-calendar"></i> 1 month ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card" data-category="events" data-aos="fade-up" data-aos-delay="200">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/ApMqetVnU_M?si=AmNCocY--8Rm_hk6" title="Event Video" allowfullscreen></iframe>
+                        <div class="play-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Event</span>
+                        <h3 class="video-title">Launch of Sanitary Towels Distribution Campaign</h3>
+                        <p class="video-description">Highlights from our official launch event for the sanitary towels distribution campaign across schools in Nigeria.</p>
+                        <div class="video-meta">
+                            <span class="video-views"><i class="fas fa-eye"></i> 8.7K</span>
+                            <span class="video-date"><i class="fas fa-calendar"></i> 2 months ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-card" data-category="testimonials" data-aos="fade-up" data-aos-delay="300">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/x0i9aV6jpS4?si=iebB5z-sI7POVcLC" title="Testimonial Video" allowfullscreen></iframe>
+                        
+                        <div class="play-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Testimonial</span>
+                        <h3 class="video-title">Amina's Story: From Victim to Victor</h3>
+                        <p class="video-description">Hear Amina's inspiring journey of how our legal aid program helped her escape domestic violence and rebuild her life.</p>
+                        <div class="video-meta">
+                            <span class="video-views"><i class="fas fa-eye"></i> 12.3K</span>
+                            <span class="video-date"><i class="fas fa-calendar"></i> 3 months ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="video-card" data-category="awareness" data-aos="fade-up" data-aos-delay="400">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/ga4HR20pXAk" title="Awareness Video" allowfullscreen></iframe>
+                        <div class="play-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Awareness</span>
+                        <h3 class="video-title">Story behind: I was on a road trip back from the east where I attended a burial.</h3>
+                        <p class="video-description">
+                        While we sat and waited for the mechanic to do his magic and hoped that he would do so quickly enough for us to hit the road again before dark, I noticed a kid singing the "1..2..buckle my shoe" rhyme in English but those words came out in unclear mumbled words.</p>
+                        <div class="video-meta">
+                            <span class="video-views"><i class="fas fa-eye"></i> 6.8K</span>
+                            <span class="video-date"><i class="fas fa-calendar"></i> 1 month ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 5 -->
+                <div class="video-card" data-category="school-visits" data-aos="fade-up" data-aos-delay="500">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/_E3lr9Cl68c?si=7m4iazjFi7-awpP5" title="Career Guidance Video" allowfullscreen></iframe>
+                        
+                        <div class="play-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">School Visit</span>
+                        <h3 class="video-title">Career Guidance Session at Adiah Obong Girls College</h3>
+                        <p class="video-description">Our career guidance program helping girls explore various career paths and break gender stereotypes.</p>
+                        <div class="video-meta">
+                            <span class="video-views"><i class="fas fa-eye"></i> 4.5K</span>
+                            <span class="video-date"><i class="fas fa-calendar"></i> 2 weeks ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 6 -->
+                <div class="video-card" data-category="events" data-aos="fade-up" data-aos-delay="600">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/4f0om82Y94c?si=GRpisUTJxs_7-EHx" title="Volunteer Event" allowfullscreen></iframe>
+                        
+                        <div class="play-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Event</span>
+                        <h3 class="video-title">Volunteer Training Program 2023</h3>
+                        <p class="video-description">Highlights from our comprehensive volunteer training program empowering community members to support our mission.</p>
+                        <div class="video-meta">
+                            <span class="video-views"><i class="fas fa-eye"></i> 3.2K</span>
+                            <span class="video-date"><i class="fas fa-calendar"></i> 1 week ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 7 -->
+                <div class="video-card" data-category="awareness" data-aos="fade-up" data-aos-delay="700">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/RwlBts_UtsA?si=LZXnbcFJVzIZx4a2" title="Community Sensitization" allowfullscreen></iframe>
+                        <div class="play-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Awareness</span>
+                        <h3 class="video-title">Award Recognition</h3>
+                        <p class="video-description">Award of Recognition to women through my ideas, works and achievements </p>
+                        <div class="video-meta">
+                            <span class="video-views"><i class="fas fa-eye"></i> 7.1K</span>
+                            <span class="video-date"><i class="fas fa-calendar"></i> 3 weeks ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 8 -->
+                <!--<div class="video-card" data-category="testimonials" data-aos="fade-up" data-aos-delay="800">-->
+                <!--    <div class="video-thumbnail">-->
+                <!--        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Success Story" allowfullscreen></iframe>-->
+                <!--        <div class="play-overlay">-->
+                <!--            <div class="play-button">-->
+                <!--                <i class="fas fa-play"></i>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--    <div class="video-info">-->
+                <!--        <span class="video-category">Testimonial</span>-->
+                <!--        <h3 class="video-title">Teacher's Perspective: Impact in Schools</h3>-->
+                <!--        <p class="video-description">Teachers share their observations on how our programs have positively impacted female students' attendance and performance.</p>-->
+                <!--        <div class="video-meta">-->
+                <!--            <span class="video-views"><i class="fas fa-eye"></i> 5.6K</span>-->
+                <!--            <span class="video-date"><i class="fas fa-calendar"></i> 1 month ago</span>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--</div>-->
+
+                <!-- Video 9 -->
+                <!--<div class="video-card" data-category="events" data-aos="fade-up" data-aos-delay="900">-->
+                <!--    <div class="video-thumbnail">-->
+                <!--        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Fundraising Event" allowfullscreen></iframe>-->
+                <!--        <div class="play-overlay">-->
+                <!--            <div class="play-button">-->
+                <!--                <i class="fas fa-play"></i>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--    <div class="video-info">-->
+                <!--        <span class="video-category">Event</span>-->
+                <!--        <h3 class="video-title">Annual Fundraising Gala 2023</h3>-->
+                <!--        <p class="video-description">Highlights from our successful fundraising event that helped raise funds for expanding our programs to more schools.</p>-->
+                <!--        <div class="video-meta">-->
+                <!--            <span class="video-views"><i class="fas fa-eye"></i> 9.4K</span>-->
+                <!--            <span class="video-date"><i class="fas fa-calendar"></i> 2 months ago</span>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--</div>-->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container" data-aos="fade-up">
+                <button class="load-more-btn" id="load-more">Load More Videos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="video-modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modal-close">&times;</span>
+            <iframe id="modal-video" src="" title="Video Player" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="100">
+                    <h3>About Us</h3>
+                    <p>Embracing the Girl Child Initiative is a program by LinkedLegal Attorneys aimed at providing legal representation, counseling, and rehabilitation to victims of sexual abuse and domestic violence.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1BVXJG9SKS/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/embracingthegirlchild?igsh=ZmtjdzV5dWFzeGNh"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="#campaigns">Campaigns</a></li>
+                        <li><a href="{% url 'blog' %}">Blog</a></li>
+                        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                        <li><a href="{% url 'videos' %}">Videos</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Video Categories</h3>
+                    <ul>
+                        <li><a href="#">School Visits</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Awareness Campaigns</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Connect With Us</h3>
+                    <p><i class="fab fa-youtube"></i> Subscribe to our YouTube channel</p>
+                    <p><i class="fas fa-envelope"></i> hello@embracingthegirlchild.org.ng</p>
+                    <p><i class="fas fa-phone"></i> +234 707 358 7489</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Embracing the Girl Child Initiative. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Navbar Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close navbar when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Video Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const videoCards = document.querySelectorAll('.video-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                videoCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Video Modal
+        const videoModal = document.getElementById('video-modal');
+        const modalVideo = document.getElementById('modal-video');
+        const modalClose = document.getElementById('modal-close');
+        const videoCardsWithModal = document.querySelectorAll('.video-card');
+
+        videoCardsWithModal.forEach(card => {
+            card.addEventListener('click', () => {
+                const iframe = card.querySelector('iframe');
+                const videoSrc = iframe.src;
+                modalVideo.src = videoSrc + '?autoplay=1';
+                videoModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeModal() {
+            videoModal.classList.remove('active');
+            modalVideo.src = '';
+            document.body.style.overflow = '';
+        }
+
+        modalClose.addEventListener('click', closeModal);
+
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                closeModal();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // Load More functionality
+        const loadMoreBtn = document.getElementById('load-more');
+        let videosLoaded = 9;
+
+        loadMoreBtn.addEventListener('click', () => {
+            // Simulate loading more videos
+            const newVideos = [
+                {
+                    category: 'school-visits',
+                    title: 'Interactive Session at Junior Secondary School',
+                    description: 'Engaging students in an interactive session about their rights and responsibilities.',
+                    views: '2.3K',
+                    date: '4 days ago'
+                },
+                {
+                    category: 'testimonials',
+                    title: 'Parent\'s Perspective: Positive Changes at Home',
+                    description: 'Parents share how our programs have positively impacted their daughters\' confidence and future aspirations.',
+                    views: '4.1K',
+                    date: '5 days ago'
+                },
+                {
+                    category: 'awareness',
+                    title: 'Domestic Violence: Breaking the Silence',
+                    description: 'A powerful awareness video addressing the issue of domestic violence and available support systems.',
+                    views: '8.9K',
+                    date: '1 week ago'
+                }
+            ];
+
+            const videosGrid = document.querySelector('.videos-grid');
+            
+            newVideos.forEach((video, index) => {
+                const videoCard = document.createElement('div');
+                videoCard.className = 'video-card';
+                videoCard.setAttribute('data-category', video.category);
+                videoCard.style.opacity = '0';
+                videoCard.innerHTML = `
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="${video.title}" allowfullscreen></iframe>
+                        <div class="play-overlay">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">${video.category.replace('-', ' ')}</span>
+                        <h3 class="video-title">${video.title}</h3>
+                        <p class="video-description">${video.description}</p>
+                        <div class="video-meta">
+                            <span class="video-views"><i class="fas fa-eye"></i> ${video.views}</span>
+                            <span class="video-date"><i class="fas fa-calendar"></i> ${video.date}</span>
+                        </div>
+                    </div>
+                `;
+                
+                videosGrid.appendChild(videoCard);
+                
+                // Add click event to new video card
+                videoCard.addEventListener('click', () => {
+                    const iframe = videoCard.querySelector('iframe');
+                    const videoSrc = iframe.src;
+                    modalVideo.src = videoSrc + '?autoplay=1';
+                    videoModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+                
+                // Animate in
+                setTimeout(() => {
+                    videoCard.style.opacity = '1';
+                    videoCard.style.transform = 'scale(1)';
+                }, 100 * index);
+            });
+            
+            videosLoaded += newVideos.length;
+            
+            // Hide load more button after loading all videos
+            if (videosLoaded >= 12) {
+                loadMoreBtn.style.display = 'none';
+            }
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
