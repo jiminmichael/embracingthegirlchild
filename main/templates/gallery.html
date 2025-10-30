@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Embracing the Girl Child Initiative</title>
     {% load static %}
+    {% comment %} {% load gallery_tags %} {% endcomment %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -55,7 +56,7 @@
                 <div class="swiper featuredSwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="{% static 'images/blog/recent5.jpg' %}" alt="Featured Event">
+                            <img src="{% static 'images/essay.jpg' %}" alt="Featured Event">
                             <div class="featured-content">
                                 <h3>School Outreach Program</h3>
                                 <p>Educating girls about their rights and menstrual hygiene at Government Science Secondary School</p>
@@ -94,63 +95,91 @@
             <!-- Gallery Grid -->
             <div class="gallery-grid">
                 <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
-                    <img src="{% static 'media/post_images/recent6.jpg' %}" alt="Gallery Image">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">GSS Karshi Girl Child Outreach</h3>
-                        <p class="gallery-category">Events</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
-                    <img src="{% static 'media/post_images/image.jpg' %}" alt="Gallery Image">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">GSS Karshi Girl Child Outreach</h3>
-                        <p class="gallery-category">Events</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
-                    <img src="{% static 'media/post_images/image6.jpg' %}" alt="Gallery Image">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">GSS Karshi Girl Child Outreach</h3>
-                        <p class="gallery-category">Events</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
-                    <img src="{% static 'media/post_images/recent3.jpg' %}" alt="Gallery Image">
-                    <div class="gallery-overlay">
-                        <h3 class="gallery-title">Girl Child Outreach</h3>
-                        <p class="gallery-category">Events</p>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
-                    <img src="{% static 'images/blog/image1.jpg' %}" alt="Gallery Image">
+                    <img src="{% static 'images/image22.jpg' %}" alt="Gallery Image">
                     <div class="gallery-overlay">
                         <h3 class="gallery-title">Launch Event</h3>
                         <p class="gallery-category">Events</p>
                     </div>
                 </div>
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'images/image33.jpg' %}" alt="Gallery Image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Launch Event</h3>
+                        <p class="gallery-category">Events</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'images/image11.jpg' %}" alt="Gallery Image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Launch Event</h3>
+                        <p class="gallery-category">Events</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'images/items.jpg' %}" alt="Gallery Image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Launch Event</h3>
+                        <p class="gallery-category">Events</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'images/outreach.jpg' %}" alt="Gallery Image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Launch Event</h3>
+                        <p class="gallery-category">Events</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'images/essay.jpg' %}" alt="Gallery Image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Launch Event</h3>
+                        <p class="gallery-category">Events</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'images/buns.jpg' %}" alt="Gallery Image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Launch Event</h3>
+                        <p class="gallery-category">Events</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'images/fakelife.jpg' %}" alt="Gallery Image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Launch Event</h3>
+                        <p class="gallery-category">Events</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'images/market.jpg' %}" alt="Gallery Image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Launch Event</h3>
+                        <p class="gallery-category">Events</p>
+                    </div>
+                </div> 
                 <div class="gallery-item" data-category="school-visits" data-aos="fade-up" data-aos-delay="200">
-                    <img src="{% static 'images/blog/image2.jpg' %}" alt="Gallery Image">
+                    <img src="{% static 'images/blog/pad.jpg' %}" alt="Gallery Image">
                     <div class="gallery-overlay">
                         <h3 class="gallery-title">School Visit - Nasarawa</h3>
                         <p class="gallery-category">School Visits</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="campaigns" data-aos="fade-up" data-aos-delay="300">
-                    <img src="{% static 'images/blog/image7.jpg' %}" alt="Gallery Image">
+                    <img src="{% static 'images/blog/image6.jpg' %}" alt="Gallery Image">
                     <div class="gallery-overlay">
                         <h3 class="gallery-title">Sanitary Towels Drive</h3>
                         <p class="gallery-category">Campaigns</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="awareness" data-aos="fade-up" data-aos-delay="400">
-                    <img src="{% static 'images/blog/image4.jpg' %}" alt="Gallery Image">
+                    <img src="{% static 'images/blog/image5.jpg' %}" alt="Gallery Image">
                     <div class="gallery-overlay">
                         <h3 class="gallery-title">Community Awareness</h3>
                         <p class="gallery-category">Awareness</p>
                     </div>
                 </div>
                 <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="500">
-                    <img src="{% static 'images/blog/image6.jpg' %}" alt="Gallery Image">
+                    <img src="{% static 'images/blog/image7.jpg' %}" alt="Gallery Image">
                     <div class="gallery-overlay">
                         <h3 class="gallery-title">Volunteer Training</h3>
                         <p class="gallery-category">Events</p>
@@ -217,7 +246,7 @@
                     <ul>
                         <li><a href="{% url 'home' %}">Home</a></li>
                         <li><a href="{% url 'about' %}">About Us</a></li>
-                        <li><a href="#campaigns">Campaigns</a></li>
+                        {% comment %} <li><a href="#campaigns">Campaigns</a></li> {% endcomment %}
                         <li><a href="{% url 'blog' %}">Blog</a></li>
                         <li><a href="{% url 'gallery' %}">Gallery</a></li>
                         <li><a href="{% url 'contact' %}">Contact</a></li>
