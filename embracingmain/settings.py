@@ -33,8 +33,15 @@ DEBUG = False
 ALLOWED_HOSTS = ['embracingthegirlchild.org.ng',
                 'www.embracingthegirlchild.org.ng',
                 'https://embracingthegirlchild.onrender.com',
-                'embracingthegirlchild.onrender.com']
+                'embracingthegirlchild.onrender.com',
+                "*"]
 
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://embracingthegirlchild.onrender.com',
+    'https://embracingthegirlchild.org.ng',
+    'https://www.embracingthegirlchild.org.ng'
+]
 
 # Application definition
 
@@ -47,7 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'cloudinary',
-    'cloudinary_storage',
+    'cloudinary_storage'
 ]
 
 MIDDLEWARE = [
@@ -61,13 +68,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'djogcbblz',
-    'API_KEY': '837879196287172',
-    'API_SECRET': '**********',
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 ROOT_URLCONF = 'embracingmain.urls'
@@ -150,11 +150,34 @@ STATICFILES_DIRS = [
 ]
 
 
-# Media files (User uploads)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+# Media files configuration
+MEDIA_URL = '/media/'  # Local media URL
+CLOUDINARY_URL = f"cloudinary://{os.environ.get('CLOUDINARY_API_KEY')}:{os.environ.get('CLOUDINARY_API_SECRET')}@{os.environ.get('CLOUDINARY_CLOUD_NAME')}"
 
+# Storage backends
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Initialize Cloudinary
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME', 'djogcbblz'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY', '837879196287172'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET', 'ZmpPKNskxpVm5hHte8FskOxMrGM')
+)
+
+# Cloudinary storage settings
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME', 'djogcbblz'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY', '837879196287172'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET', 'ZmpPKNskxpVm5hHte8FskOxMrGM'),
+    'STATICFILES_MANIFEST_ROOT': os.path.join(BASE_DIR, 'static'),
+    'MEDIA_TAG': 'media',
+    'STATIC_TAG': 'static',
+    'STATIC_IMAGES_EXTENSIONS': ['jpg', 'jpe', 'jpeg', 'jpc', 'jp2', 'j2k', 'wdp', 'jxr',
+                                'hdp', 'png', 'gif', 'webp', 'bmp', 'tif', 'tiff', 'ico'],
+    'MAGIC_FILE_PATH': None,
+    'PREFIX': 'embracingthegirlchild'  # Optional prefix for uploaded files
+}
 
 
 # Default primary key field type

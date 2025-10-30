@@ -114,7 +114,7 @@
                         <div class="swiper-slide" data-aos="zoom-in" data-aos-delay="100">
                             <div class="blog-card">
                                 <div class="blog-image">
-                                    <img src={% static "media/{{item.image.url}}" %}  alt="Blog Post">
+                                    <img src="{{ item.image.url }}" alt="{{ item.title }}">
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-meta">
@@ -344,11 +344,11 @@
                 <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
                     <h3>Programs</h3>
                     <ul>
-                        <li><a href="#">Legal Representation</a></li>
-                        <li><a href="#">Domestic Violence Support</a></li>
-                        <li><a href="#">Sanitary Towels Distribution</a></li>
-                        <li><a href="#">Public Sensitization</a></li>
-                        <li><a href="#">School Visits</a></li>
+                        <li><a href="{% url "contact" %}">Legal Representation</a></li>
+                        <li><a href="{% url "blog" %}">Domestic Violence Support</a></li>
+                        <li><a href="{% url "blog" %}">Sanitary Towels Distribution</a></li>
+                        <li><a href="{% url "blog" %}">Public Sensitization</a></li>
+                        <li><a href="{% url "blog" %}">School Visits</a></li>
                     </ul>
                 </div>
                 <div class="footer-column" data-aos="fade-up" data-aos-delay="400">

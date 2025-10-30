@@ -82,7 +82,7 @@
     <div class="blog-featured-image">
         <img src="{{ post.image.url }}" alt="{{post.title}}">
         <div class="image-caption">
-            Girls participating in a menstrual hygiene education session at Government Science Secondary School
+            {{post.title}}
         </div>
     </div>
 
@@ -90,100 +90,12 @@
     <main class="blog-content">
         <article class="blog-post-content">
             <p data-aos="fade-up">{{post.content |linebreaks}}</p>
-
-            {% comment %} <h2 data-aos="fade-up">The Current Situation</h2>
-            <p data-aos="fade-up">In many parts of Nigeria, menstruation remains a taboo topic. Girls often receive little to no education about their menstrual cycles until they experience their first period, leading to confusion, fear, and embarrassment. This lack of knowledge has severe consequences:</p>
-            
-            <ul data-aos="fade-up">
-                <li>Many girls miss up to 20% of school days each year due to menstruation</li>
-                <li>Lack of access to affordable sanitary products forces girls to use unhygienic alternatives</li>
-                <li>Cultural myths and misconceptions lead to social isolation</li>
-                <li>Poor menstrual health can lead to infections and reproductive health issues</li>
-            </ul>
-
-            <div class="highlight-box" data-aos="fade-up">
-                <h3>Did You Know?</h3>
-                <p>According to UNICEF, 1 in 10 girls in Africa miss school during their periods. In Nigeria, this number is even higher in rural areas where access to sanitary products and education is limited.</p>
-            </div>
-
-            <h2 data-aos="fade-up">Why Education Matters</h2>
-            <p data-aos="fade-up">Proper menstrual hygiene education does more than just teach girls about their bodies—it empowers them to take control of their health and education. When girls understand what's happening to their bodies, they're more likely to:</p>
-
-            <ol data-aos="fade-up">
-                <li><strong>Stay in School:</strong> Education removes the stigma and fear associated with menstruation, allowing girls to attend school regularly throughout their cycles.</li>
-                <li><strong>Maintain Proper Hygiene:</strong> Knowledge about proper hygiene practices prevents infections and promotes overall health.</li>
-                <li><strong>Build Confidence:</strong> Understanding their bodies helps girls develop self-confidence and positive body image.</li>
-                <li><strong>Become Advocates:</strong> Educated girls can help break the cycle of silence and educate others in their communities.</li>
-            </ol>
-
-            <blockquote data-aos="fade-up">
-                <p>"Education is the most powerful weapon which you can use to change the world. When we educate girls about their bodies and rights, we're not just changing individual lives—we're transforming entire communities."</p>
-            </blockquote>
-
-            <h2 data-aos="fade-up">Our Approach</h2>
-            <p data-aos="fade-up">Through our school visits and community outreach programs, we take a comprehensive approach to menstrual hygiene education:</p>
-
-            <div class="stats-section" data-aos="fade-up">
-                <div class="stat-item">
-                    <div class="stat-number">15,000+</div>
-                    <div class="stat-label">Girls Educated</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Schools Reached</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100,000+</div>
-                    <div class="stat-label">Sanitary Products Distributed</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">85%</div>
-                    <div class="stat-label">Attendance Improvement</div>
-                </div>
-            </div>
-
-            <h3 data-aos="fade-up">Interactive Sessions</h3>
-            <p data-aos="fade-up">We conduct interactive sessions where girls can ask questions freely in a safe environment. Our sessions cover:</p>
-            <ul data-aos="fade-up">
-                <li>The biological process of menstruation</li>
-                <li>Proper hygiene practices</li>
-                <li>Nutrition during menstruation</li>
-                <li>How to track menstrual cycles</li>
-                <li>When to seek medical help</li>
-            </ul>
-
-            <h3 data-aos="fade-up">Product Distribution</h3>
-            <p data-aos="fade-up">Education alone isn't enough if girls can't afford sanitary products. We distribute free sanitary towels in schools and teach girls how to use them properly. This ensures that financial constraints don't prevent girls from managing their periods with dignity.</p>
-
-            <h3 data-aos="fade-up">Engaging Boys and Men</h3>
-            <p data-aos="fade-up">We believe menstrual hygiene is everyone's responsibility. We conduct separate sessions for boys to help them understand menstruation and become supportive allies. We also engage parents and community leaders to break down cultural barriers.</p>
-
-            <h2 data-aos="fade-up">Success Stories</h2>
-            <p data-aos="fade-up">The impact of our menstrual hygiene education program has been remarkable. Here are a few stories that highlight the difference we're making:</p>
-
-            <p data-aos="fade-up"><strong>Fatima's Story:</strong> Fatima, a 14-year-old student in Nasarawa, used to miss school for three days every month during her period. After attending our education session and receiving sanitary products, she now attends school regularly and has even become a peer educator, helping other girls in her class.</p>
-
-            <p data-aos="fade-up"><strong>Community Change:</strong> In one community where we conducted our program, the school principal reported a 40% reduction in absenteeism among female students within six months. The community also started a small fund to ensure continuous supply of sanitary products for needy students.</p>
-
-            <h2 data-aos="fade-up">Looking Forward</h2>
-            <p data-aos="fade-up">While we've made significant progress, there's still much work to be done. Our goals for the coming year include:</p>
-            <ul data-aos="fade-up">
-                <li>Expanding our program to reach 100 more schools</li>
-                <li>Developing a comprehensive menstrual health curriculum</li>
-                <li>Training local women as menstrual health educators</li>
-                <li>Advocating for government policies to support menstrual health in schools</li>
-                <li>Establishing sustainable sanitary product distribution systems</li>
-            </ul>
-
-            <p data-aos="fade-up">Menstrual hygiene education is not just about health—it's about ensuring that every girl has the opportunity to pursue her education and dreams without interruption. When we invest in menstrual health education, we're investing in the future of our girls and our nation.</p>
-
-            <p data-aos="fade-up">Join us in this mission. Whether through volunteering, donations, or simply spreading awareness, your support can help us reach more girls and create lasting change.</p> {% endcomment %}
         </article>
 
         <!-- Tags and Share -->
         <div class="blog-footer">
-            <div class="blog-tags">
-                <h3>Tags</h3>
+            {% comment %} <div class="blog-tags">
+                <h3>Categories</h3>
                 <div class="tag-list">
                     <a href="#" class="tag">Menstrual Health</a>
                     <a href="#" class="tag">Education</a>
@@ -191,7 +103,7 @@
                     <a href="#" class="tag">School Programs</a>
                     <a href="#" class="tag">Health & Hygiene</a>
                 </div>
-            </div>
+            </div> {% endcomment %}
             
             <div class="share-section">
                 <h3>Share this post</h3>

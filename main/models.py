@@ -2,12 +2,18 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.utils import timezone
+from cloudinary_storage.storage import MediaCloudinaryStorage
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True)
     content = models.TextField()
-    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
+    image = models.ImageField(
+        upload_to='post_images/', 
+        blank=True, 
+        null=True,
+        storage=MediaCloudinaryStorage()
+    )
     # new fields
     CATEGORY_CHOICES = [
         ('education', 'Education'),

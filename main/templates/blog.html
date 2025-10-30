@@ -76,8 +76,14 @@
                 {% for item in posts %}
                     <article class="blog-post" data-aos="fade-up">
                         <div class="blog-image">
-                            <img src="{{ post.image.url }}" alt="Blog Post">
-                            <span class="blog-category">{{item.category}}</span>
+                        
+                                <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                        
+                                <!-- Fallback to a bundled static image while debugging -->
+                               
+                    
+
+                            <span class="blog-category">{{ item.category }}</span>
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
@@ -212,7 +218,7 @@
                     </div>
 
                     <!-- Tags Widget -->
-                    <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="300">
+                    {% comment %} <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="300">
                         <h3 class="widget-title">Popular Tags</h3>
                         <div class="tag-cloud">
                             <a href="#" class="tag">Education</a>
@@ -224,7 +230,7 @@
                             <a href="#" class="tag">Success</a>
                             <a href="#" class="tag">Awareness</a>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
                 </aside>
             </div>
         </div>
@@ -258,11 +264,11 @@
                 <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
                     <h3>Programs</h3>
                     <ul>
-                        <li><a href="#">Legal Representation</a></li>
-                        <li><a href="#">Domestic Violence Support</a></li>
-                        <li><a href="#">Sanitary Towels Distribution</a></li>
-                        <li><a href="#">Public Sensitization</a></li>
-                        <li><a href="#">School Visits</a></li>
+                        <li><a href="{% url "contact" %}">Legal Representation</a></li>
+                        <li><a href="{% url "blog" %}">Domestic Violence Support</a></li>
+                        <li><a href="{% url "blog" %}">Sanitary Towels Distribution</a></li>
+                        <li><a href="{% url "blog" %}">Public Sensitization</a></li>
+                        <li><a href="{% url "blog" %}">School Visits</a></li>
                     </ul>
                 </div>
                 <div class="footer-column" data-aos="fade-up" data-aos-delay="400">

@@ -93,7 +93,35 @@
 
             <!-- Gallery Grid -->
             <div class="gallery-grid">
-                        <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'media/post_images/recent6.jpg' %}" alt="Gallery Image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">GSS Karshi Girl Child Outreach</h3>
+                        <p class="gallery-category">Events</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'media/post_images/image.jpg' %}" alt="Gallery Image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">GSS Karshi Girl Child Outreach</h3>
+                        <p class="gallery-category">Events</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'media/post_images/image6.jpg' %}" alt="Gallery Image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">GSS Karshi Girl Child Outreach</h3>
+                        <p class="gallery-category">Events</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{% static 'media/post_images/recent3.jpg' %}" alt="Gallery Image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Girl Child Outreach</h3>
+                        <p class="gallery-category">Events</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="events" data-aos="fade-up" data-aos-delay="100">
                     <img src="{% static 'images/blog/image1.jpg' %}" alt="Gallery Image">
                     <div class="gallery-overlay">
                         <h3 class="gallery-title">Launch Event</h3>
@@ -198,11 +226,11 @@
                 <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
                     <h3>Programs</h3>
                     <ul>
-                        <li><a href="#">Legal Representation</a></li>
-                        <li><a href="#">Domestic Violence Support</a></li>
-                        <li><a href="#">Sanitary Towels Distribution</a></li>
-                        <li><a href="#">Public Sensitization</a></li>
-                        <li><a href="#">School Visits</a></li>
+                        <li><a href="{% url "contact" %}">Legal Representation</a></li>
+                        <li><a href="{% url "blog" %}">Domestic Violence Support</a></li>
+                        <li><a href="{% url "blog" %}">Sanitary Towels Distribution</a></li>
+                        <li><a href="{% url "blog" %}">Public Sensitization</a></li>
+                        <li><a href="{% url "blog" %}">School Visits</a></li>
                     </ul>
                 </div>
                 <div class="footer-column" data-aos="fade-up" data-aos-delay="400">
