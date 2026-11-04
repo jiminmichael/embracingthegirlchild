@@ -1,0 +1,237 @@
+/* ==========================================================================
+   Embracing The Girl Child Initiative - Django Admin Custom Theme
+   Powered by UI/UX Pro Max Design System
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --primary: #d81b60 !important;
+    --primary-fg: #ffffff !important;
+    --primary-hover: #c2185b !important;
+    --primary-gradient: linear-gradient(135deg, #e91e63 0%, #ad1457 100%) !important;
+    --secondary: #f06292 !important;
+    --accent: #f59e0b !important;
+    --header-bg: #1e293b !important;
+    --header-color: #ffffff !important;
+    --header-branding-color: #ffffff !important;
+    --body-bg: #f8fafc !important;
+    --body-fg: #1e293b !important;
+    --border-color: #e2e8f0 !important;
+    --breadcrumbs-bg: #f1f5f9 !important;
+    --breadcrumbs-fg: #475569 !important;
+    --breadcrumbs-link-fg: #d81b60 !important;
+    --button-bg: #d81b60 !important;
+    --button-hover-bg: #c2185b !important;
+    --button-fg: #ffffff !important;
+    --default-button-bg: #e2e8f0 !important;
+    --default-button-hover-bg: #cbd5e1 !important;
+    --default-button-fg: #334155 !important;
+    --module-bg: #ffffff !important;
+    --selected-row: #fff1f5 !important;
+    --message-success-bg: #ecfdf5 !important;
+    --message-success-color: #065f46 !important;
+    --message-warning-bg: #fffbeb !important;
+    --message-warning-color: #92400e !important;
+    --message-error-bg: #fef2f2 !important;
+    --message-error-color: #991b1b !important;
+}
+
+/* Base Font Overrides */
+html, body, button, input, select, textarea {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header & Branding */
+#header {
+    background: #0f172a !important;
+    background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, rgba(216, 27, 96, 0.4) 100%) !important;
+    color: #ffffff !important;
+    padding: 1rem 1.5rem !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    border-bottom: 2px solid #d81b60 !important;
+}
+
+#branding h1 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-weight: 700 !important;
+    font-size: 1.35rem !important;
+    letter-spacing: -0.01em !important;
+}
+
+#branding h1 a:link, #branding h1 a:visited {
+    color: #ffffff !important;
+}
+
+#branding h1::before {
+    content: '🌸 ';
+    font-size: 1.1rem;
+}
+
+#user-tools {
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    color: #cbd5e1 !important;
+}
+
+#user-tools a {
+    color: #f06292 !important;
+    font-weight: 600 !important;
+    padding: 4px 10px !important;
+    border-radius: 9999px !important;
+    transition: all 0.2s ease !important;
+}
+
+#user-tools a:hover {
+    background: rgba(240, 98, 146, 0.15) !important;
+    color: #ffffff !important;
+}
+
+/* Breadcrumbs */
+div.breadcrumbs {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 0.85rem 1.5rem !important;
+    font-size: 0.875rem !important;
+    color: #64748b !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+}
+
+div.breadcrumbs a {
+    color: #d81b60 !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+}
+
+div.breadcrumbs a:hover {
+    color: #ad1457 !important;
+    text-decoration: underline !important;
+}
+
+/* Modules & Tables */
+.module {
+    background: #ffffff !important;
+    border-radius: 14px !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    border: 1px solid #e2e8f0 !important;
+    overflow: hidden !important;
+    margin-bottom: 1.75rem !important;
+}
+
+.module caption, .module h2 {
+    background: linear-gradient(135deg, #fff5f8 0%, #ffffff 100%) !important;
+    color: #1e293b !important;
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    padding: 1rem 1.25rem !important;
+    border-bottom: 1px solid #fce4ec !important;
+}
+
+table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    width: 100% !important;
+}
+
+thead th {
+    background: #f8fafc !important;
+    color: #475569 !important;
+    font-weight: 600 !important;
+    font-size: 0.8rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    padding: 0.85rem 1rem !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+tbody tr:hover {
+    background-color: #fff5f8 !important;
+}
+
+tbody td {
+    padding: 0.85rem 1rem !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    color: #334155 !important;
+    font-size: 0.9rem !important;
+}
+
+/* Action Buttons & Save Buttons */
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: linear-gradient(135deg, #e91e63 0%, #ad1457 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 9999px !important;
+    padding: 0.6rem 1.4rem !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+    box-shadow: 0 4px 12px rgba(216, 27, 96, 0.25) !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+}
+
+.button:hover, input[type=submit]:hover, input[type=button]:hover, a.button:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 18px rgba(216, 27, 96, 0.35) !important;
+    background: linear-gradient(135deg, #d81b60 0%, #880e4f 100%) !important;
+}
+
+.button.default, input[type=submit].default {
+    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%) !important;
+}
+
+.submit-row {
+    background: #ffffff !important;
+    border-radius: 14px !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 1.25rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Form Controls */
+input[type=text], input[type=password], input[type=email], input[type=url], 
+input[type=number], textarea, select, .vTextField {
+    border-radius: 8px !important;
+    border: 1px solid #cbd5e1 !important;
+    padding: 0.65rem 0.85rem !important;
+    font-size: 0.95rem !important;
+    color: #1e293b !important;
+    background: #ffffff !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+input[type=text]:focus, textarea:focus, select:focus {
+    border-color: #d81b60 !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(216, 27, 96, 0.15) !important;
+}
+
+/* Responsive Admin adjustments for Mobile Viewport */
+@media (max-width: 768px) {
+    #header {
+        padding: 0.85rem 1rem !important;
+    }
+
+    #branding h1 {
+        font-size: 1.15rem !important;
+    }
+
+    #user-tools {
+        margin-top: 0.5rem !important;
+        font-size: 0.8rem !important;
+    }
+
+    .breadcrumbs {
+        padding: 0.75rem 1rem !important;
+    }
+
+    #content {
+        padding: 1rem !important;
+    }
+
+    .module {
+        border-radius: 10px !important;
+    }
+}
+

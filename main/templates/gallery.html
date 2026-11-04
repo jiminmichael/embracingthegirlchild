@@ -11,6 +11,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static "css/gallery.css" %} ">
 
+    <link rel="stylesheet" href="{% static 'css/mobile-app.css' %}">
 </head>
 <body>
     <!-- Navbar -->
@@ -483,5 +484,6 @@
             }
         });
     </script>
+    {% include "partials/_mobile_nav.html" %}
 </body>
 </html>

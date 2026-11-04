@@ -33,20 +33,12 @@
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static "css/index.css" %}">
+    <link rel="stylesheet" href="{% static "css/mobile-app.css" %}">
     <style>
         
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loader-wrapper" id="loader">
-        <div class="loader">
-            <div class="loader-circle"></div>
-            <div class="loader-circle"></div>
-            <div class="loader-circle"></div>
-        </div>
-    </div>
-
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
@@ -445,13 +437,6 @@
             offset: 100
         });
 
-        // Loading Screen
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('loader').classList.add('fade-out');
-            }, 1000);
-        });
-
         // Navbar Toggle
         const navToggle = document.getElementById('nav-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -548,9 +533,10 @@
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            if (window.innerWidth > 768) { hero.style.transform = `translateY(${scrolled * 0.3}px)`; } else { hero.style.transform = "none"; }
         });
     </script>
+    {% include "partials/_mobile_nav.html" %}
 </body>
 
 </html>

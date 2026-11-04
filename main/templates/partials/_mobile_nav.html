@@ -1,0 +1,27 @@
+{% load static %}
+<!-- Native-feel Mobile Application Bottom Navigation Bar -->
+<div class="mobile-app-bar" aria-label="Mobile Navigation">
+    <a href="{% url 'home' %}" class="mobile-tab-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}" id="tab-home">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
+    <a href="{% url 'about' %}" class="mobile-tab-item {% if request.resolver_match.url_name == 'about' %}active{% endif %}" id="tab-about">
+        <i class="fas fa-heart"></i>
+        <span>About</span>
+    </a>
+    <a href="{% url 'blog' %}" class="mobile-tab-item action-tab {% if request.resolver_match.url_name == 'blog' or request.resolver_match.url_name == 'single-blog' %}active{% endif %}" id="tab-blog">
+        <div class="action-circle">
+            <i class="fas fa-newspaper"></i>
+        </div>
+        <span>Stories</span>
+    </a>
+    <a href="{% url 'gallery' %}" class="mobile-tab-item {% if request.resolver_match.url_name == 'gallery' %}active{% endif %}" id="tab-gallery">
+        <i class="fas fa-images"></i>
+        <span>Gallery</span>
+    </a>
+    <a href="{% url 'contact' %}" class="mobile-tab-item {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" id="tab-contact">
+        <i class="fas fa-paper-plane"></i>
+        <span>Contact</span>
+    </a>
+</div>
+

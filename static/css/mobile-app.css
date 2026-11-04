@@ -1,0 +1,514 @@
+/* ==========================================================================
+   Embracing The Girl Child Initiative - Global Modern UI/UX & Mobile App System
+   Powered by UI/UX Pro Max Design Intelligence
+   Comprehensive Mobile Viewport, Overlap Prevention & High Polish
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+:root {
+    /* Brand Colors */
+    --primary-pink: #d81b60;
+    --primary-pink-hover: #c2185b;
+    --primary-gradient: linear-gradient(135deg, #e91e63 0%, #ad1457 100%);
+    --secondary-pink: #f06292;
+    --light-pink: #fce4ec;
+    --pink-subtle: #fff5f8;
+    --accent-gold: #f59e0b;
+    
+    /* Neutrals & Dark Tones */
+    --dark-gray: #1e293b;
+    --medium-gray: #64748b;
+    --light-gray: #f8fafc;
+    --border-subtle: #e2e8f0;
+    --white: #ffffff;
+    --black: #0f172a;
+
+    /* Elegant Typography */
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Shadows & Elevations */
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 4px 16px -2px rgba(216, 27, 96, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 12px 32px -4px rgba(216, 27, 96, 0.14), 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+    --shadow-bottom-nav: 0 -4px 20px rgba(0, 0, 0, 0.08);
+
+    /* Radii */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   GLOBAL VIEWPORT & OVERFLOW PROTECTION
+   ========================================================================== */
+html {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    position: relative;
+    font-family: var(--font-sans) !important;
+    color: var(--dark-gray);
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img, video, iframe, picture {
+    max-width: 100% !important;
+    height: auto;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, .section-header h2, .section-title h2, .page-header h1, .hero-content h1, .blog-content h2, .volunteer-cta h2 {
+    font-family: var(--font-heading) !important;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
+
+h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+}
+
+/* Desktop Navbar */
+.navbar {
+    background: rgba(255, 255, 255, 0.94) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+    transition: var(--transition);
+}
+
+.nav-links a {
+    font-family: var(--font-sans) !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    padding: 0.5rem 0.85rem !important;
+    border-radius: var(--radius-full);
+    transition: var(--transition) !important;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-pink) !important;
+    background: var(--pink-subtle) !important;
+}
+
+/* Modern Pill Buttons */
+.btn, .btn-primary, button.btn, .read-more-btn, .volunteer-btn, .donate-btn {
+    font-family: var(--font-sans) !important;
+    font-weight: 600 !important;
+    border-radius: var(--radius-full) !important;
+    letter-spacing: 0.01em;
+    transition: var(--transition) !important;
+    box-shadow: 0 4px 14px rgba(216, 27, 96, 0.25) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn:hover, .btn-primary:hover, .read-more-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(216, 27, 96, 0.35) !important;
+}
+
+/* Modern Cards Polish */
+.campaign-card, 
+.story-card, 
+.blog-card, 
+.team-member, 
+.mission-card, 
+.vision-card, 
+.value-card, 
+.gallery-item, 
+.video-card, 
+.related-post-card,
+.info-card,
+.contact-form-container {
+    border-radius: var(--radius-md) !important;
+    overflow: hidden !important;
+    transition: var(--transition) !important;
+    border: 1px solid var(--border-subtle) !important;
+    box-shadow: var(--shadow-sm) !important;
+    background: var(--white);
+}
+
+.campaign-card:hover, 
+.story-card:hover, 
+.blog-card:hover, 
+.gallery-item:hover,
+.video-card:hover,
+.related-post-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+/* Grids: prevent horizontal overflow */
+.campaigns-grid,
+.stories-grid,
+.gallery-grid,
+.videos-grid,
+.related-posts-grid,
+.team-grid,
+.values-grid,
+.stats-grid,
+.footer-content {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)) !important;
+    gap: 1.5rem !important;
+}
+
+/* ==========================================================================
+   MOBILE VIEWPORT & APP OVERLAP REMEDIATION (<= 768px)
+   ========================================================================== */
+.mobile-app-bar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* 1. Prevent Bottom App Bar from Overlapping Page Content & Footer */
+    body {
+        padding-bottom: calc(76px + env(safe-area-inset-bottom, 16px)) !important;
+    }
+
+    footer {
+        margin-bottom: 0 !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* 2. Prevent Top Navbar from Overlapping Hero and Page Headers */
+    .navbar {
+        height: 64px !important;
+        padding: 0 1rem !important;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    .logo img {
+        height: 40px !important;
+        width: auto !important;
+    }
+
+    /* Mobile hamburger menu drawer - modern overlay */
+    .nav-links {
+        top: 64px !important;
+        height: calc(100vh - 64px - 72px) !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        border-bottom: 1px solid var(--border-subtle);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        padding: 2rem 1rem !important;
+        gap: 1.25rem !important;
+        z-index: 999;
+    }
+
+    .nav-links a {
+        font-size: 1.15rem !important;
+        padding: 0.75rem 1.5rem !important;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 3. Hero Section: guaranteed headroom to avoid top navbar overlap */
+    .hero {
+        min-height: 85vh !important;
+        height: auto !important;
+        padding-top: calc(75px + 2rem) !important;
+        padding-bottom: 3.5rem !important;
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        background-attachment: scroll !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .hero-content {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .hero h1, .hero-content h1 {
+        font-size: 2.1rem !important;
+        line-height: 1.25 !important;
+        margin-bottom: 1.2rem !important;
+        word-break: break-word;
+    }
+
+    .hero p, .hero-content p {
+        font-size: 1.02rem !important;
+        line-height: 1.6 !important;
+        padding: 0 0.25rem !important;
+        margin-bottom: 1.75rem !important;
+    }
+
+    /* 4. Page Header for Inner Pages (About, Blog, Gallery, Contact, Videos) */
+    .page-header {
+        height: auto !important;
+        min-height: 280px !important;
+        padding-top: calc(75px + 2rem) !important;
+        padding-bottom: 3.5rem !important;
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        background-attachment: scroll !important;
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .page-header h1 {
+        font-size: 2.2rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .page-header p {
+        font-size: 1.05rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .breadcrumb {
+        position: static !important;
+        transform: none !important;
+        margin-top: 1rem !important;
+        justify-content: center !important;
+    }
+
+    /* 5. Single blog header spacing */
+    .single-blog-header, .post-header {
+        padding-top: calc(75px + 2rem) !important;
+    }
+
+    /* 6. Containers & Section Spacing */
+    .container {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        max-width: 100% !important;
+    }
+
+    section {
+        padding: 45px 0 !important;
+    }
+
+    .section-title h2, .section-header h2 {
+        font-size: 1.85rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .section-title p, .section-header p {
+        font-size: 0.95rem !important;
+    }
+
+    /* 7. Responsive 1-Column Layouts for Split Screens */
+    .about-content, 
+    .blog-container, 
+    .contact-container, 
+    .intro-content,
+    .mission-vision-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    .sidebar {
+        width: 100% !important;
+    }
+
+    /* 8. Forms & Inputs */
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        font-size: 16px !important; /* Prevents auto-zoom on iOS Safari */
+        padding: 0.85rem 1rem !important;
+        border-radius: var(--radius-sm) !important;
+        border: 1px solid var(--border-subtle) !important;
+        width: 100% !important;
+    }
+
+    /* 9. Modal Mobile Responsiveness */
+    .modal-content {
+        width: 92% !important;
+        max-width: 92% !important;
+        margin: 8vh auto !important;
+        padding: 1.5rem !important;
+        border-radius: var(--radius-md) !important;
+    }
+
+    /* 10. Featured Swiper / Gallery Slider */
+    .featured-swiper, .featuredSwiper {
+        height: 280px !important;
+        border-radius: var(--radius-md) !important;
+    }
+
+    .featured-content {
+        padding: 1.25rem !important;
+    }
+
+    .featured-content h3 {
+        font-size: 1.25rem !important;
+    }
+
+    /* 11. Footer Mobile Alignment */
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    /* 12. Mobile App Bottom Navigation Bar */
+    .mobile-app-bar {
+        display: flex !important;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: calc(64px + env(safe-area-inset-bottom, 0px)) !important;
+        padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+        background: rgba(255, 255, 255, 0.96) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border-top: 1px solid rgba(226, 232, 240, 0.9) !important;
+        box-shadow: var(--shadow-bottom-nav) !important;
+        z-index: 99999 !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        user-select: none;
+    }
+
+    .mobile-tab-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: #64748b;
+        text-decoration: none;
+        position: relative;
+        transition: var(--transition);
+        padding: 4px 0;
+        gap: 3px;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .mobile-tab-item i {
+        font-size: 1.15rem;
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .mobile-tab-item span {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        transition: color 0.2s ease;
+    }
+
+    .mobile-tab-item:active i {
+        transform: scale(0.88);
+    }
+
+    .mobile-tab-item.active {
+        color: var(--primary-pink);
+    }
+
+    .mobile-tab-item.active i {
+        transform: translateY(-2px);
+    }
+
+    .mobile-tab-item.active::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 30px;
+        height: 3px;
+        background: var(--primary-pink);
+        border-radius: 0 0 3px 3px;
+    }
+
+    /* Action Center Tab (Highlight / Stories) */
+    .mobile-tab-item.action-tab {
+        position: relative;
+    }
+
+    .mobile-tab-item.action-tab .action-circle {
+        position: absolute;
+        top: -14px;
+        width: 44px;
+        height: 44px;
+        background: var(--primary-gradient);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        box-shadow: 0 6px 16px rgba(233, 30, 99, 0.35);
+        border: 3px solid #ffffff;
+        transition: transform 0.25s ease;
+    }
+
+    .mobile-tab-item.action-tab .action-circle i {
+        font-size: 1.05rem;
+        color: #ffffff;
+    }
+
+    .mobile-tab-item.action-tab:active .action-circle {
+        transform: scale(0.92);
+    }
+
+    .mobile-tab-item.action-tab span {
+        margin-top: 24px;
+    }
+}
+
+/* Extra small devices (< 400px like iPhone SE, foldables) */
+@media (max-width: 400px) {
+    .hero h1, .hero-content h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .section-title h2, .section-header h2 {
+        font-size: 1.6rem !important;
+    }
+
+    .campaigns-grid,
+    .stories-grid,
+    .gallery-grid,
+    .videos-grid,
+    .team-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .mobile-tab-item span {
+        font-size: 0.62rem;
+    }
+}

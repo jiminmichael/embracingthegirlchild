@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{% static "css/single-blog.css" %}">
     
   
+    <link rel="stylesheet" href="{% static 'css/mobile-app.css' %}">
 </head>
 <body>
     <!-- Navbar -->
@@ -450,5 +451,6 @@
             console.log(`Reading progress: ${scrolled}%`);
         });
     </script>
+    {% include "partials/_mobile_nav.html" %}
 </body>
 </html>
