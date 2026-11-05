@@ -4,29 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="ugxuitIAxQrlF8vhKTw5x4hoY0aZ3yfumGP6qbBXFF8" />
-    <meta name="keywords" content="Embracing The Girl Child Initiative, Girl child initiative ,  Gender based violence in nigeria, Human rights, Female child education, NGOS in nigeria, Girl child, Girl child rights ">
-    
-    <!-- Author info -->
-    <meta name="author" content="Embracing The Girl Child Initiative">
-    
-    <meta http-equiv="Content-Language" content="en">
-    
-    <meta property="og:title" content="Embracing The Girl Child Initiative">
-    <meta property="og:description" content="Embracing the Girl Child Initiative is a non-governmental organization in partnership with LinkedLegal Atorneys aimed at providing legal representation, counseling and rehabilitation of victims of sexual abuse and domestic violence; sensitizing the girl child on various laws protecting the girl child, pubety, menstrual hygiene, career choices, sex ducation. etc. and also the free distribution of sanitary towels..">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.embracingthegirlchild.org.ng/">
-    <meta property="og:image" content="https://www.embracingthegirlchild.org.ng/logo.jpg">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Embracing The Girl Child Initiative || Home Page">
-    <meta name="twitter:description" content="Embracing the Girl Child Initiative is a non-governmental organization in partnership with LinkedLegal Atorneys aimed at providing legal representation, counseling and rehabilitation of victims of sexual abuse and domestic violence; sensitizing the girl child on various laws protecting the girl child, pubety, menstrual hygiene, career choices, sex ducation. etc. and also the free distribution of sanitary towels..">
-    <meta name="twitter:image" content="https://www.embracingthegirlchild.org.ng/logo.jpg">
-    <!--<meta name="twitter:site" content="@yourTwitterHandle">-->
-    
-
+    {% include "partials/seo_meta.html" %}
     {% load static %}
-    <title>Embracing the Girl Child Initiative</title>
     <link rel="icon" type="image/png" href="https://z-cdn-media.chatglm.cn/files/cfdb71fd-48c0-4f1d-a248-ebab49926f5b_IMG-20251002-WA0085.jpg?auth_key=1791109073-72061cc10a6a4422a644cd152e8fba17-0-64911efa59b64a1798297de3879c9d34">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
@@ -106,7 +85,11 @@
                         <div class="swiper-slide" data-aos="zoom-in" data-aos-delay="100">
                             <div class="blog-card">
                                 <div class="blog-image">
-                                    <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                                    {% if item.image.name %}
+                                        <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                                    {% else %}
+                                        <img src="{% static 'images/logo.jpg' %}" alt="Embracing the Girl Child Initiative">
+                                    {% endif %}
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-meta">

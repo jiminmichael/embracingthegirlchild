@@ -3,28 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <meta name="google-site-verification" content="ugxuitIAxQrlF8vhKTw5x4hoY0aZ3yfumGP6qbBXFF8" />
-    <meta name="keywords" content="Embracing The Girl Child Initiative, Gender based violence in nigeria, Human rights, Female child education, NGOS in nigeria, Girl child, Girl child rights ">
-    
-    <!-- Author info -->
-    <meta name="author" content="Embracing The Girl Child Initiative">
-    
-    <meta http-equiv="Content-Language" content="en">
-    
-    <meta property="og:title" content="Blog || Embracing The Girl Child Initiative">
-    <meta property="og:description" content="Embracing the Girl Child Initiative is a non-governmental organization in partnership with LinkedLegal Atorneys aimed at providing legal representation, counseling and rehabilitation of victims of sexual abuse and domestic violence; sensitizing the girl child on various laws protecting the girl child, pubety, menstrual hygiene, career choices, sex ducation. etc. and also the free distribution of sanitary towels..">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.embracingthegirlchild.org.ng/about.html">
-    <meta property="og:image" content="https://www.embracingthegirlchild.org.ng/logo.jpg">
+    {% include "partials/seo_meta.html" %}
     {% load static %}
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Embracing The Girl Child Initiative || About Page">
-    <meta name="twitter:description" content="Embracing the Girl Child Initiative is a non-governmental organization in partnership with LinkedLegal Atorneys aimed at providing legal representation, counseling and rehabilitation of victims of sexual abuse and domestic violence; sensitizing the girl child on various laws protecting the girl child, pubety, menstrual hygiene, career choices, sex ducation. etc. and also the free distribution of sanitary towels..">
-    <meta name="twitter:image" content="https://www.embracingthegirlchild.org.ng/logo.jpg">
-    <title>Blog - Embracing the Girl Child Initiative</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static "css/blog.css" %} ">
@@ -77,13 +58,11 @@
                 {% for item in posts %}
                     <article class="blog-post" data-aos="fade-up">
                         <div class="blog-image">
-                        
+                            {% if item.image.name %}
                                 <img src="{{ item.image.url }}" alt="{{ item.title }}">
-                        
-                                <!-- Fallback to a bundled static image while debugging -->
-                               
-                    
-
+                            {% else %}
+                                <img src="{% static 'images/logo.jpg' %}" alt="Embracing the Girl Child Initiative">
+                            {% endif %}
                             <span class="blog-category">{{ item.category }}</span>
                         </div>
                         <div class="blog-content">
@@ -91,7 +70,7 @@
                                 <span><i class="fas fa-calendar"></i>{{item.created_at}}</span>
                                 <span><i class="fas fa-user"></i>{{item.author}}</span>
                             </div>
-                            <a href="{{item.slug}}" class="blog-title" style="text-decoration: none;">{{item.title}}</a>
+                            <a href="{% url 'post_detail' item.slug %}" class="blog-title" style="text-decoration: none;">{{item.title}}</a>
                             <p class="blog-excerpt">{{item.content|truncatewords:30}}</p>
                             <a href="{{item.pub_link}}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                         </div>

@@ -1,0 +1,58 @@
+<title>{{ seo_title }}</title>
+<meta name="description" content="{{ seo_description }}">
+<meta name="author" content="Embracing the Girl Child Initiative">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ seo_canonical_url }}">
+
+<meta property="og:site_name" content="Embracing the Girl Child Initiative">
+<meta property="og:locale" content="en_NG">
+<meta property="og:title" content="{{ seo_title }}">
+<meta property="og:description" content="{{ seo_description }}">
+<meta property="og:type" content="{{ seo_type }}">
+<meta property="og:url" content="{{ seo_canonical_url }}">
+<meta property="og:image" content="{{ seo_image_url }}">
+<meta property="og:image:alt" content="{{ seo_title }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title }}">
+<meta name="twitter:description" content="{{ seo_description }}">
+<meta name="twitter:image" content="{{ seo_image_url }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Embracing the Girl Child Initiative",
+  "url": "{{ site_url|escapejs }}/",
+  "logo": "{{ seo_logo_url|escapejs }}"
+}
+</script>
+{% if post %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ post.title|escapejs }}",
+  "description": "{{ seo_description|escapejs }}",
+  "datePublished": "{{ post.created_at|date:'c' }}",
+  "dateModified": "{{ post.updated_at|date:'c' }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ post.author|escapejs }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Embracing the Girl Child Initiative",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ seo_logo_url|escapejs }}"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ seo_canonical_url|escapejs }}"
+  },
+  "image": "{{ seo_image_url|escapejs }}"
+}
+</script>
+{% endif %}
